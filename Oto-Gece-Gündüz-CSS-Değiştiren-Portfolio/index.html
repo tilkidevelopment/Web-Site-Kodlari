@@ -1,0 +1,100 @@
+<html>
+<head>
+<script>
+function selectCSSByTime() {
+    const date = new Date();
+    const hour = date.getHours();
+
+    // Öğleden önce 5 ile öğleden sonra 5 arasında
+    if (hour >= 5 && hour < 17) {
+        document.getElementById('css-stylesheet').href = '/sabah.css';
+    } else {
+        document.getElementById('css-stylesheet').href = '/aksam.css';
+    }
+}
+
+window.addEventListener('load', function() {
+    if (new Date().getHours() !== undefined) {
+        selectCSSByTime();
+    }
+});
+
+window.addEventListener('load', fg_load)
+
+    function fg_load() {
+        document.getElementById('loading').style.display = 'none'
+    }
+</script>
+
+<style>
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #ff7300; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  background-image: url("https://tilki.dev/cd.png");
+  background-size: cover; 
+ background-repeat: no-repeat;
+ background-position: center;
+ background-color: rgba(0, 0, 0, 0,5);
+ zoom: 100%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  background-image: url("https://tilki.dev/arkaplan.jpg");
+  background-size: cover; 
+ background-repeat: no-repeat;
+ background-position: center;
+ background-color: rgba(0, 0, 0, 0,5);
+ zoom: 100%;
+  z-index: 999
+}
+
+</style>
+
+
+<link id="css-stylesheet" rel="stylesheet" href="/varsayilan.css"> 
+<meta charset="UTF-8">
+  <title>Tilki / Ana Sayfa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+<a href="#">Ana Sayfa</a> | <a href="/api">API</a> | <a href="/bana-ulasin">Bana Ulaşın</a>
+</div>
+<div class="up-down-animation">
+
+<h1>Tilki</h1>
+</div>
+<div id="loading">
+ <div class="loader"></div>
+</div> 
+<div class="profil">
+    <img src="https://tilki.dev/api/discord-avatar/1097150765581213786" alt="Profil Resmi">
+    <div class="profil-bilgi">
+        <h2>Tilki</h2>
+        <p>Merhaba! Ben Tilki. 16 yaşında bir yazılım geliştiriciyim ve restful API'ler oluşturuyorum. Teknolojiye olan ilgim ve merakım sayesinde genç yaşta bu alanda kendimi geliştirdim ve çeşitli projelerde yer aldım.</p>
+        <p>Teknolojiye olan ilgim küçük yaşlardan beri vardı. Bilgisayarlarla ve kodlama dünyasıyla ilk tanışmam, discord bot yapımı ile oldu. Ardından web geliştirme ve yazılım alanında kendimi daha da geliştirmeye başladım. Başlangıçta basit web siteleri oluşturarak adımı atmaya başladım.</p>
+    </div>
+</div>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8c379951f8bd50ed',t:'MTcyNjM5MjYzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
