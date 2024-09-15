@@ -1,0 +1,122 @@
+@font-face {
+  font-family: Game;
+  src: url("/font/Starborn.ttf");
+}
+
+@font-face {
+  font-family: Good;
+  src: url("/font/Good.ttf");
+}
+
+body {
+ background-image: url("https://blog.novatrend.ch/wp-content/uploads/2022/08/Screenshot-2022-08-23-at-13.31.05.png"); 
+ background-size: cover; 
+ background-repeat: no-repeat;
+ background-position: center;
+ background-color: rgba(0, 0, 0, 0,5);
+ zoom: 100%;
+}
+
+h1 {
+  font-family: Game;
+  color: #ffffff;
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.navbar {
+    text-align: center;
+    margin-top: 1rem;
+    color: #ffffff;
+}
+
+a {
+  font-family: 'Good', cursive;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.up-down-animation {
+        animation: upDown 1s infinite alternate;
+    }
+
+    @keyframes upDown {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(10px); /* YukarÄ± kaydÄ±rma miktarÄ± */
+        }
+    }
+    
+    
+    .profil {
+        
+       background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15px; 
+        
+    }
+ 
+
+    .profil img {
+        max-width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .profil-bilgi {
+        padding: 20px;
+    }
+
+    .profil-bilgi h2 {
+      font-family: 'Game', cursive;
+      color: #ffffff;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .profil-bilgi p {
+      font-family: 'Good', cursive;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    /* Mobil ekranlar iĆ§in */
+    @media screen and (max-width: 600px) {
+        .profil {
+            border-radius: 5px;
+        }
+
+        .profil img {
+            border-radius: 50%;
+        }
+    }
+
+    /* MasaĆ¼stĆ¼ ekranlar iĆ§in */
+    @media screen and (min-width: 601px) {
+        .profil {
+            display: flex;
+        }
+
+        .profil img {
+            border-radius: 50%;
+            max-width: 300px;
+            margin-left: 50px;
+            margin-top: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .profil-bilgi {
+            padding: 20px;
+        }
+        
+        .profil-bilgi p {
+          margin-left: 50px;
+        
+        }
+        
+        .profil-bilgi h2 {
+          margin-left: 50px;
+        }
+    }
