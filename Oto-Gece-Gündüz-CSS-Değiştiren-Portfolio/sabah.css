@@ -1,11 +1,11 @@
 @font-face {
   font-family: Game;
-  src: url("/font/Starborn.ttf");
+  src: url("/Starborn.ttf");
 }
 
 @font-face {
   font-family: Good;
-  src: url("/font/Good.ttf");
+  src: url("/Good.ttf");
 }
 
 body {
