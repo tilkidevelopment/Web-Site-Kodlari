@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discord Botu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @font-face {
+      font-family: 'font'; 
+      src: url('/font/Uni%20Sans%20Bold.otf') format('opentype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c2f33;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('/resim/discord.webp');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    header .btn, header .discord {
+      background-color: #5865f2;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    header .btn:hover, header .discord:hover {
+      background-color: #4752c4;
+    }
+
+    nav {
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5865f2;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      
+      header h1 span {
+        display: block;
+        font-size: 10px;
+      }
+    }
+
+    .features {
+      padding: 40px 0;
+      background-color: #23272a;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .features .feature-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    header .container h1 {
+      font-family: font;
+      font-size: 100px;
+    }
+
+    header .container h1 span {
+      font-family: font;
+      font-size: 100px;
+      background-color: #355ce6; 
+      color: white;
+      border-radius: 20px;
+      padding: 5px;
+    }
+
+    .feature-card {
+      background-color: #2c2f33;
+      border: 1px solid;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      flex-basis: calc(33.333% - 20px);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: borderRGB 3s linear infinite;
+    }
+
+  .kart-ama-kart {
+      background-color: #2c2f33;
+      border: 1px solid;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      flex-basis: 400;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: borderRGB 3s linear infinite;
+    }
+
+    .feature-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    @keyframes borderRGB {
+      0% {
+        border-color: rgb(255, 0, 0);
+      }
+      33% {
+        border-color: rgb(0, 255, 0); 
+      }
+      66% {
+        border-color: rgb(0, 0, 255);
+      }
+      100% {
+        border-color: rgb(255, 0, 0); 
+      }
+    }
+
+    @media (max-width: 768px) {
+      .feature-card {
+        flex-basis: 100%;
+      }
+    }
+
+    footer {
+      background-color: #23272a;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: #ffffff;
+    }
+    
+.uzun-kart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  background-color: #2c2f33;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  width: 100%;
+}
+
+.list-column {
+  flex-basis: 30%; 
+  max-width: 30%;
+  margin-right: 40px;
+}
+
+.list-column:last-child {
+  margin-right: 0;
+}
+
+.list-column img {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.list-column h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.list-column ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.list-column ul li {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  margin-bottom: 10px;
+  color: #ccc;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+  .list-container {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .list-column {
+    flex-basis: 100%; 
+    max-width: 100%; 
+    margin-right: 10;
+    margin-bottom: 20px; 
+    text-align: center;
+  }
+
+  .list-column:last-child {
+    margin-bottom: 0; 
+  }
+  
+   .kart-ama-kart {
+      background-color: #2c2f33;
+      border: 1px solid;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      flex-basis: 350px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: borderRGB 3s linear infinite;
+    }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <ul>
+      <li><a href="#anasayfa"><i class="fas fa-home"></i></a></li>
+      <li><a href="#ozellikler"><i class="fas fa-bolt"></i></a></li>
+      <li><a href="#developer"><i class="fas fa-code"></i></a></li>
+    </ul>
+  </nav>
+
+  <header id="anasayfa">
+    <div class="container">
+      <h1>Tilki <span>&nbsp;<i class="fas fa-check"></i> BOT&nbsp;</span></h1>
+      <p>Discord sunucularınızdaki en iyi yardımcı!</p>
+      <a href="https://discord.com/oauth2/authorize?client_id=BOT_CLIENT_ID&permissions=8&scope=bot" class="btn">Botu Davet Et</a>
+      <a href="/discord" class="discord"><i class="fab fa-discord"></i></a>
+    </div>
+  </header>
+
+  <section class="features" id="ozellikler">
+    <div class="container">
+      <h2>Özellikler</h2>
+      <div class="feature-container">
+        <div class="feature-card">
+          <h3>Kolay Kullanım</h3>
+          <p>Kullanıcı dostu komutlar ile basit bir kullanım deneyimi.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Yönetim Araçları</h3>
+          <p>Sunucunuzu kolayca yönetmek için çeşitli araçlar.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Otomatik Moderasyon</h3>
+          <p>Spam ve uygunsuz içerikleri otomatik olarak engelleyin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="features" id="bilgileri">
+    <div class="container">
+      <h2>İstatistik</h2>
+      <div class="feature-container">
+        <div class="feature-card">
+          <h3><i class="fas fa-server"></i></h3>
+          <p><b>Sunucu Sayısı:</b> <br> <h2>100+</h2></p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fas fa-users"></i></h3>
+          <p><b>Kullanıcı Sayısı:</b> <br> <h2>10000+</h2></p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fas fa-code"></i></h3>
+          <p><b>Komut Sayısı:</b> <br> <h2>100+</h2></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="features" id="developer">
+  <div class="container">
+    <h2>Destekciler</h2>
+    <div class="feature-container">
+      <div class="kart-ama-kart uzun-kart">
+        <div class="list-container">
+          <div class="list-column">
+            <img src="/resim/developer_kurt.png">
+          </div>
+          <div class="list-column">
+          <center><h3>&nbsp;&nbsp;Owner</h3></center>
+            <ul>
+              <li>Tilki - Owner</li>
+            </ul>
+          </div>
+          <div class="list-column">
+            <h3>&nbsp;&nbsp;Developer</h3>
+            <ul>
+              <li>Civciv - Developer</li>
+              <li>Tavsan_Ab - Developer</li>
+               <li>Uranüs Portakal Adam - Developer</li>
+               <li>Ctr56 - Developer</li>
+               <li>Burki - Developer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Tilki BOT. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+
+    const smoothScroll = (target, duration) => {
+      const targetElement = document.querySelector(target);
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const startPosition = window.scrollY;
+      const distance = targetPosition + startPosition;
+      let startTime = null;
+
+      const animation = currentTime => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+
+      const ease = (t, b, c, d) => {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      };
+
+      requestAnimationFrame(animation);
+    };
+
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = e.target.getAttribute('href');
+        smoothScroll(target, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
